@@ -7,7 +7,7 @@ permalink: /teaching/COMP151/homework/Reading
 The calendar below lists the sections of the text that you are expected to have read and ready to discuss for each day of the semester. It also includes expected dates for each exam. ***This calendar is likely to change and shift as the semester progresses so check it regularly.***
 
 
-&nbsp;&nbsp;&nbsp;**Last Updated 9/29**
+&nbsp;&nbsp;&nbsp;**Last Updated 11/8**
 
 
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
@@ -31,16 +31,16 @@ The calendar below lists the sections of the text that you are expected to have 
 | | | | | |
 |10/14 - 10/18  | | | | | |
 | | | | | |
-|10/21 - 10/15  | 7.1 | | 7.2 | | 7.3 - 7.4 |
+|10/21 - 10/15  | | | | | |
 | | | | | |
-|10/28 - 11/1  | 8.1 - 8.2  | | | | 8.3 - 8.6 |
+|10/28 - 11/1  | | | | | 7.1 |
 | | | | | |
-|11/4 - 11/8  | | | 9.1 - 9.3 | | 9.4 |
+|11/4 - 11/8  | 7.2-7.3 | | 7.3 | | 7.4 |
 | | | | | |
-|11/11 - 11/15  | 9.5 | | EXAM 4 | | |
+|11/11 - 11/15  | 8.1-8.2 | | 8.4-8.6 | |  EXAM 4|
 | | | | | |
-|11/18 - 11/22  |10.1 - 10.2 | | 10.3 - 10.4 | | EXAM 5 |
+|11/18 - 11/22  | 9.1-9.3 | | 9.4 | | 9.5 |
 | | | | | |
-|11/25 - 11/29  | 15.1 - 15.2 | | Break | | Break |
+|11/25 - 11/29  |EXAM5 | | Break | | Break |
 | | | | | |
-|12/2 - 12/6  | 15.3 | | | | EXAM 6 |
+|12/2 - 12/6  | | | | | EXAM6 |
