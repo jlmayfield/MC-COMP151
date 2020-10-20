@@ -27,7 +27,7 @@ The second version of the program adds pixelization to the faces (see below) bef
 
 #### Version 0.75
 
-The third version of the program scales down the size of the faces prior to pixelization.  At this point, the process is as follows: make a copy of the face region that is half the size the original, pixelate it, then convert it to 8 bit color.  Your program should now display just the 8-bit, pixel faces rather than the whole image.
+The third version of the program crops and scales down the faces. You should do this after the color conversion and pixelation. So at this point, the process is as follows: pixelate the faces, change the color to 8 bit color, crop and shrink the faces into new images. Your program should now display just the 8-bit, pixel faces rather than the whole images. 
 
 #### Version 1.0
 
