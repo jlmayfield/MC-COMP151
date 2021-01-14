@@ -17,9 +17,11 @@ setMediaPath('/home/jlmayfield/repos/CourseRepos/MC-COMP151/bookmedia/')
 #eye1 (109,91) , (146,111)
 #eye2 (166,90) , (202,107)
 def reduceRedEye(pic,startx,starty,endx,endy,endclr,clrthresh):
-  for y in range(starty,endy+1):
-    for x in range(startx, endx+1):
-      px = getPixelAt(pic,x,y)
+  for y in range(starty,endy):
+    for x in range(startx, endx):
+      px = getPixel(pic,x,y)
+      
+      
       clr = getColor(px)
       if distance(clr,red) < clrthresh:
            setColor(px,endclr)

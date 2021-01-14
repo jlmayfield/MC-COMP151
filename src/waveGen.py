@@ -6,6 +6,8 @@
 
 # needed for white noise generation
 import random
+import math
+from media import *
 
 # produce an empty sound given time measured in floating point seconds
 # i.e. 0.5 seconds 
@@ -24,7 +26,7 @@ def sineWave(freq,amp,sec):
   samps = getSamples(result)
   for i in range(0,len(samps)):
     # find point on +/- 1 sin wave
-    raw = sin((i/sampPerCycle) * 2 * pi)
+    raw = math.sin((i/sampPerCycle) * 2 * math.pi)
     value = raw * amp
     setSampleValue(samps[i],value)  
   return result

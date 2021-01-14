@@ -31,5 +31,7 @@ setMediaPath('/home/jlmayfield/repos/CourseRepos/MC-COMP151/bookmedia/')
 def main():
   horse = makePicture('horse.jpg')  
   blurred_horse = blur(horse)
+  blur(horse)
   explore(horse)
+  
   explore(blurred_horse)

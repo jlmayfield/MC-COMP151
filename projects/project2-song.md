@@ -1,8 +1,5 @@
----
-layout: page
-title: COMP151 - Project 2 - 32 Beats in 3 Parts
-permalink: /teaching/COMP151/projects/project2songs
----
+# A 3-Part, 32-beat Snippet of the College Hymn
+### A pre-written alternative for Version 2 of Project 2
 
 For your final project you have to program a three part, 32 beat song. Below you'll find the details for a three part arrangement of the chorus of *The Monmouth College Hymn* along with some general advice if you want to come up with something original.
 
@@ -68,9 +65,3 @@ The bass part is purposefully simple and repetitive.  Every note except the last
 | E3 | 25 |
 | E3 | 27 |
 | A3 (hold 4 beats) | 29-32 |
-
-### Go Your Own Way
-
-You are welcome to program a different piece of music, write your own music, or write a variation of the song given above so long as the end result contains at least three parts, lasts for at least 32 beats, and is built up from at least 16 distinct sounds. You are not required to write harmonies and can do a drum-machine like rhythmic pattern if you want. Have fun with it.
-
-If you choose to write something original and you're new to song writing, then you should stick to increments of 4 or 8 beats.  You can see this structure in the song above. The melody and harmony have a clear 4 beat pattern. One strategy you might try is to write something with AABA song structure. To do this come up with with two complimentary 8 beat phrases. The first phrase is called the A part and the second is called the B part. Your song is then just two repetitions of A, one time through B, then one more time through A, hence AABA. This is not only a classic song structure but the kind or repetitive pattern that is easy to program. 
