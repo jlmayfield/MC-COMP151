@@ -1,14 +1,6 @@
----
-layout: page
-title: COMP151 - Homework 1
-permalink: /teaching/COMP151/homework/homework1
----
+### Homework 1
+#### COMP 151 - Spring 2021
 
-<h3 align="center">
- Due in-class on Monday 8/26
-</h3>
+For this homework set you'll be exploring data encoding through a few problems from chapter 1.  Answer the problems on paper, scan them to a PDF file, and submit them on Gradescope. Most of your work will be done in python files, but we will need to do pencil and paper work from time to time so this is practice for that. A really easy way to scan documents to PDF is with the app Camscanner (see link below). Alternatively, you can type your answers and save or export the document to PDF format.
 
-Complete problems 1.3, 1.8, 1.12, 1.14. 1.18, and 1.26 from chapter 1 of the text.
-* Problems 1.10 through 1.24 ask you to learn something about important people in computer science. You were required to do 1.12, 1.14, and 1.18;  Choose *two additional* problems/people from the 1.10 to 1.24 range and do those as well. Don't go over board with the biographical details. Stick to the question and keep it to just a few sentences.
-
-You may submit either hand written or typed answers.
+Do the following problems: 1.3, 1.4, 1.5,  1.8. 1.14, 1.17 & 1.18
