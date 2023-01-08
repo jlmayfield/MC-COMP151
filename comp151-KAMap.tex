@@ -1,0 +1,72 @@
+\documentclass[10pt,letter]{article}
+\usepackage{setspace}
+\usepackage{array,colortbl,multirow,multicol,booktabs,ctable}
+% Palatino for main text and math
+\usepackage[osf,sc]{mathpazo}
+% Helvetica for sans serif
+% (scaled to match size of Palatino)
+\usepackage[scaled=0.90]{helvet}
+% Bera Mono for monospaced
+% (scaled to match size of Palatino)
+\usepackage[scaled=0.85]{beramono}
+
+\newcommand{\hdrule}{\midrule[\heavyrulewidth]}
+
+\setlength{\textheight}{10.5in}
+\setlength{\topmargin}{-1.5in}
+\setlength{\textwidth}{7.5in}
+\setlength{\oddsidemargin}{-.5in}
+\setlength{\evensidemargin}{-.5in}
+
+\title{COMP151 Knowledge Areas}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+% #,topic,#,sub-topic,chap/sec
+\center{
+  \begin{tabular}{r>{\raggedright}p{0.3\textwidth}r>{\raggedright}p{0.4\textwidth}c}\toprule
+ & Topic & & Sub-Topic & Chapters Covered \\ \hdrule
+ 1 & Data Types (Objects, Values, and Operations) & a & Integers & 2+\\
+  & & b & Floating Point Numbers & 2+\\
+  & & c & Strings/Characters & 2+\\
+  & & d & Booleans & 8\\ \midrule
+ 2 & Expressions and Substitution Semantics & a & Variable Evaluation - Identifiers & 2+ \\ \midrule
+ 3 & Statements and Side-Effect/State-based Semantics (I/O, Mutation, \& Control) & a & I/O: Read \& Write from terminal and files & 2\\
+ & & b & Variables (mutation): Declaration, Initialization, Assignment & 2+\\
+ & & c & Conditionals (control): if, if...else, if...else if...else & 8 \\
+ & & d & Loops (control):  for, while & 7 ,14 \\
+ & & e & Exceptions (control): throw, Try..catch, with & 19 \\ \midrule
+ 4 & Functions/Procedures & a & Definition: return value, side-effects & 12 \\
+& & b & Application: For value (functional) , for effect (stateful) & 12 \\ \midrule
+5 & Data Structures, Classes \& Compound Data & a & Structs/Named-Tuples & \\
+  & & b & Tuples & 6 \\
+ & & c & Dynamic Array-List \& Sequences & 6 \\
+ & & d & Dictionary & 11 \\ \midrule
+6 & Design \& Problem Solving & a & Iteration and Accumulation & 7 \\
+ & & b & Recursive Functions & \\
+ & & c & Nested Expressions \& Statements  & 7--9 \\
+ & & d & Functional Composition (helper/auxiliary functions) & 12 \\
+ & & e & Functional Abstraction & 12 \\
+ & & f & Data Abstraction and Objects & 20 \\ \midrule
+7 & Debugging and Troubleshooting & a & Print-statement based debugging & 3 \\
+& & b & Debuggers and Steppers & \\
+& & c & Unit Tests \& Testing Generally & 18 \\
+& & d & Syntax, Run-time Errors, and Compiler/Interpreter Messages & 3 \\ \midrule
+8 & Professional Knowledge (Table 4.2 from CC2020 (pg 50)) & a & Analytical and Critical Thinking & All \\
+  & & b & Collaboration and Teamwork &  \\
+  & & c & Ethical and Intercultural Perspectives &  \\
+  & & d & Mathematics and Statistics &  \\
+  & & e & Multi-Task Prioritization and Management &  \\
+  & & f & Oral Communication and Presentation &  \\
+  & & g & Problem Solving and Troubleshooting &  \\
+  & & h & Project and Task Organization and Planning &  \\
+  & & i & Quality Assurance / Control &  \\
+  & & j & Relationship Management &  \\
+  & & k & Research and Self-Starter/Learner & \\
+  & & l & Time Management & \\
+  & & m & Written Communication &  \\ \bottomrule
+\end{tabular}
+}%end center
+\end{document}
