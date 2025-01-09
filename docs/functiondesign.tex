@@ -1,0 +1,116 @@
+\documentclass[nobib]{tufte-handout}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{minted}
+
+%\setlength{\textheight}{9in} \setlength{\topmargin}{-.5in}
+%\setlength{\textwidth}{6.5in} \setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+
+\title{COMP151 - Function Designer's Checklist}
+\author{  }
+\date{}
+
+\begin{document}
+\maketitle
+
+Designing and developing functions is a multi-step process through which you incrementally develop your understanding of both the problem solved by the function and the inner workings of the function itself. This check list is adapted from the outstanding Design Recipe used in the text \textit{How to Design Programs}\sidenote{see htdp.org} by Felleisen, et. al.
+
+\section{ The Checklist }
+
+\begin{enumerate}
+  \item \textit{Inventory the problem} and determine the function's \textit{\textbf{signature}}\sidenote{The number and types of parameters and the type of return value(s)}, and it's \textit{purpose}\sidenote{What it's used for and how it's used}. Take note of functions that produce \textit{\textbf{side-effects}}\sidenote{Action other than take and return values, i.e print, get user input, modify memory outside of the function, etc.} 
+  \begin{quote}
+    \textit{Problem: Develop a function to compute the area of a right triangle from it's base and height lengths.} 
+    
+    This problem has two numerical parameters, the base and height of the triangle, and will compute another number, the area.  The area very likely to be a \mintinline{python3}{float}. Without any further clarification about base and height, it's probably safest to assume they too are \mintinline{python3}{float} data. Given that nothing was said about printing or other effects, it seems this function is free of side-effects. All together we have:
+    \begin{itemize}
+      \item \textit{Signature: } Two floating point parameters (base and height), one floating point return value (area). 
+      \item \textit{Purpose: } To compute the area of a right triangle from its base and height. 
+      \item \textit{Side-Effects: } None. 
+    \end{itemize}
+  \end{quote}
+  \item Write the function definition's \textit{\textbf{header}\sidenote{The first line of the function def.}}, a \textit{\textbf{stub}}\sidenote{A placeholder statement. Typically just a return.} for the \textit{\textbf{body}}\sidenote{The indented statements after the header.} that returns a value of the appropriate type, and document the signature and purpose with a proper \textit{\textbf{docstring}}\sidenote{Multiline string that documents the purpose and signature of a function.}.
+  \begin{quote}
+    The header follows pretty quickly from the signature. We already determined the types of parameters and the return value, so we mostly need to settle on the function and parameter names.  The problem gives us good names for the parameters: base and height. The name of the function should reflect it's return value and purpose, we'll use \textit{rt\_{}area} for \textit{right-triangle area} in case we have other area functions later. This leads to the following header: \mintinline{python3}{def rt_area(base : float, height : float) -> float:}. The stub for the body can just be \mintinline{python3}{return 0.0} as the function must return a float and that statement minimally satisfies that signature specification. Putting this all together and adding a docstring we get:
+    \newpage 
+    \begin{minted}{python3}
+      def rt_area(base : float, height : float) -> float:
+        """
+        Compute the area of a right triangle from it's base and height. 
+
+        Parameters:
+          base : float - the length of the triangle base 
+          height : float - the length of the triangle height
+
+        Return:
+          float : the area of the triangle 
+        """
+        return 0.0
+    \end{minted}
+  \end{quote}
+  \item Work out several specific \textit{\textbf{use cases}}\sidenote{Concrete instance of using the function to meet its documented purpose.} and for those use cases determine the function \textit{\textbf{arguments}}\sidenote{Actual values passed to the function}, expected return value(s), and expected side-effects. When prudent, document the use cases in the docstring as examples and code them up as runnable tests to aid what comes next.
+  \begin{quote}
+  A quick check on the web, or the right math text, tells us that the area is $\dfrac{bh}{2}$ for base $b$ and height $h$. A dead simple example would be a base and height of 1. This leads to an area of $\dfrac{1*1}{2} = \dfrac{1}{2}$ or $0.5$.  To compute this we'd call \mintinline{python3}{rt_area(1,1)} and expect a return of $0.5$. If we instead have a base of 1 and height of 2, then the call \mintinline{python3}{rt_area(1,2)} should return $\dfrac{1*2}{2} = 1.0$. Finally a more interesting example might be a base of 3.5 and a height 2.25 where \mintinline{python3}{rt_area(3.5,2.25)} will return $\dfrac{3.5*2.25}{2} = 3.9375$. If we're so inclined we might update the docstring to something like: 
+  \begin{minted}{python3}
+    """
+    Compute the area of a right triangle from it's base and height. 
+    Examples:  
+        rt_area(1,1) -> 0.5
+        rt_area(3.5, 2.25) --> 3.9375
+    Parameters:
+      base : float - the length of the triangle base 
+      height : float - the length of the triangle height
+
+    Return:
+      float : the area of the triangle 
+    """
+  \end{minted}
+  These same examples could be written up as actionable test using print statement, e.g. \mintinline{python3}{print(rt_area(1,2), 1.0)}, or a unit-testing framework. 
+  \end{quote}
+  \item \textit{Implement} the function by replacing the stub body with code that actually meets the function's purpose. Use cases can and should be used to motivate generalized code form instance specific code, i.e. replace ``hard coded'' values with variable names. At this point we should have some idea of what to do or at least where to start. If nothing else, working out the use-cases means we've solved the problem a few times and just need to translate what we did to code.
+  \begin{quote}
+    For all of our use-cases we multiplied base by height then divided by 2, all floating point operations. These leads to two reasonable versions of the body of our function:
+    \begin{minted}{python3}
+      # Option 1: compute area and store in variable, then return stored value.
+      area = base * height / 2 
+      return area 
+
+      # Option 2: drop the variable and do it in one line 
+      return base * height / 2
+    \end{minted}
+    Opting for option 2 we get an updated, and hopefully correct definition. 
+    \begin{minted}{python3}
+      def rt_area(base : float, height : float) -> float:
+        """
+        Compute the area of a right triangle from it's base and height. 
+        Examples:  
+            rt_area(1,1) -> 0.5
+            rt_area(3.5, 2.25) --> 3.9375
+        Parameters:
+          base : float - the length of the triangle base 
+          height : float - the length of the triangle height
+    
+        Return:
+          float : the area of the triangle 
+        """
+        return base * height / 2
+    \end{minted}
+
+  \end{quote}
+
+  \item Test completed function definition against use cases and other pertinent test-cases. Debug as needed. If, during testing, you discover that the signature is missing something then return to step 1 and update your understanding of the problem along with the header and docstring. We cannot know if our definition is correct until we actually use it. We should make every effort to test it outside of its use in a larger system. This could me writing unit-tests or loading the definition in a scratch file, calling the function on various arguments, and printing the result. Other options for testing exist, what's important is that you actually case the function to get called in python code and verify that it's behaving as expected on a variety of arguments. 
+  \begin{quote}
+    Run the following code and ensure the the printed return value is equal to the printed expected value (the second thing printed.)
+    \begin{minted}{python3}
+      print(rt_area(1,1), 0.5)
+      print(rt_area(1,2), 1.0)
+      print(rt_area(3.5,2.25), 3.9375)
+    \end{minted}
+  \end{quote}
+
+\end{enumerate}
+
+
+\end{document}
